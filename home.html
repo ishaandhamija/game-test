@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Over iframe</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #iframe-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    #myButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* Ensure button appears above iframe */
+    }
+</style>
+</head>
+<body>
+<div id="iframe-container">
+    <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"> </iframe>
+    <button id="myButton">Click Me</button>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Iframe on Button Click</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #iframe-container {
+        display: none; /* Initially hide the iframe */
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="iframe-container">
+    <iframe seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" style="width: 100%;height: 100%;border: 0px;" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
+</div>
+<button id="showIframeButton">Show Iframe</button>
+
+<script>
+    const iframeContainer = document.getElementById('iframe-container');
+    const showIframeButton = document.getElementById('showIframeButton');
+
+    showIframeButton.addEventListener('click', () => {
+        iframeContainer.style.display = 'block'; // Show the iframe when the button is clicked
+    });
+</script>
+</body>
+</html>
