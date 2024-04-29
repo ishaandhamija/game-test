@@ -8,10 +8,14 @@
         body {
             background-image: url('https://raw.githubusercontent.com/ishaandhamija/game-test/main/game_menu_bg.png');
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 45%;
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding-top: 50px;
+            overflow: hidden;
+            margin: 0;
         }
 
         h1 {
@@ -20,9 +24,10 @@
         }
 
         .game-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
+            top: 52%;
+            left: 52%;
+            transform: translate(-50%, -50%);
         }
 
         .game-button {
@@ -37,21 +42,50 @@
         }
 
         .game-button img {
-            width: 300px;
+            width: 140px;
             height: auto;
             border-radius: 20px;
+        }
+        .iframe-container {
+            z-index: 999;
+        }
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
         }
 
     </style>
 </head>
 <body>
+    <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
+    <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S"></iframe>
     <div class="game-buttons">
-        <a href="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r" class="game-button">
+        <a id="game1Button" class="game-button">
             <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
         </a>
-        <a href="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" class="game-button">
+        <a id="game2Button" class="game-button">
             <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
         </a>
     </div>
+
+    <script>
+        const game1Button = document.getElementById('game1Button');
+        const game1Iframe = document.getElementById('game1Iframe')
+        const game2Button = document.getElementById('game2Button');
+        const game2Iframe = document.getElementById('game2Iframe')
+        game1Iframe.style.display = 'none';
+        game2Iframe.style.display = 'none';
+
+        game1Button.addEventListener('click', () => {
+            game1Iframe.style.display = 'block';
+        });
+        game2Button.addEventListener('click', () => {
+            game2Iframe.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
