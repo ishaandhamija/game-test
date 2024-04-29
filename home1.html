@@ -58,6 +58,8 @@
             z-index: 999;
         }
         .back-button img {
+            width: 20px;
+            height: auto;
             position: fixed;
             top: 20px;
             left: 20px;
@@ -71,7 +73,7 @@
         <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
         <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S"></iframe>
         <a id="backButton" class="back-button">
-            <img src="backButton.png" alt="Go Back">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/backButton.png" alt="Go Back">
         </a>
     </div>
     <div class="game-buttons">
@@ -95,10 +97,12 @@
         backButton.style.display = 'none';
 
         game1Button.addEventListener('click', () => {
+            game1Iframe.src += '';
             game1Iframe.style.display = 'block';
             backButton.style.display = 'block';
         });
         game2Button.addEventListener('click', () => {
+            game2Iframe.src += '';
             game2Iframe.style.display = 'block';
             backButton.style.display = 'block';
         });
