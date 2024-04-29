@@ -57,12 +57,23 @@
             height: 100vh;
             z-index: 999;
         }
+        .back-button img {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
 
     </style>
 </head>
 <body>
-    <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
-    <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S"></iframe>
+    <div>
+        <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
+        <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S"></iframe>
+        <a id="backButton" class="back-button">
+            <img src="backButton.png" alt="Go Back">
+        </a>
+    </div>
     <div class="game-buttons">
         <a id="game1Button" class="game-button">
             <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
@@ -74,17 +85,27 @@
 
     <script>
         const game1Button = document.getElementById('game1Button');
-        const game1Iframe = document.getElementById('game1Iframe')
+        const game1Iframe = document.getElementById('game1Iframe');
         const game2Button = document.getElementById('game2Button');
-        const game2Iframe = document.getElementById('game2Iframe')
+        const game2Iframe = document.getElementById('game2Iframe');
+        const backButton = document.getElementById('backButton');
+
         game1Iframe.style.display = 'none';
         game2Iframe.style.display = 'none';
+        backButton.style.display = 'none';
 
         game1Button.addEventListener('click', () => {
             game1Iframe.style.display = 'block';
+            backButton.style.display = 'block';
         });
         game2Button.addEventListener('click', () => {
             game2Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        backButton.addEventListener('click', () => {
+            game1Iframe.style.display = 'none';
+            game2Iframe.style.display = 'none';
+            backButton.style.display = 'none';
         });
     </script>
 </body>
