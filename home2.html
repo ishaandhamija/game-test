@@ -8,6 +8,8 @@
         body {
             background-image: url('https://raw.githubusercontent.com/ishaandhamija/game-test/main/game_menu_bg.png');
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 45%;
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -20,9 +22,10 @@
         }
 
         .game-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
+            top: 52%;
+            left: 52%;
+            transform: translate(-50%, -50%);
         }
 
         .game-button {
@@ -37,7 +40,7 @@
         }
 
         .game-button img {
-            width: 300px;
+            width: 140px;
             height: auto;
             border-radius: 20px;
         }
