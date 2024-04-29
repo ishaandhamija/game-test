@@ -32,7 +32,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -65,5 +65,116 @@
         iframeContainer.style.display = 'block'; // Show the iframe when the button is clicked
     });
 </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Iframe on Button Click</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #iframe-container {
+        width: 100%;
+        height: 100%;
+    }
+    #myIframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    #backButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+    }
+</style>
+</head>
+<body>
+<div id="iframe-container">
+    <iframe id="myIframe" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
+</div>
+<button id="backButton">Back</button>
+<button id="showIframeButton">Show Iframe</button>
+
+<script>
+    const showIframeButton = document.getElementById('showIframeButton');
+    const backButton = document.getElementById('backButton');
+
+    showIframeButton.addEventListener('click', () => {
+        document.getElementById('myIframe').style.display = 'block'; // Show the iframe
+        showIframeButton.style.display = 'none'; // Hide the show iframe button
+    });
+
+    backButton.addEventListener('click', () => {
+        document.getElementById('myIframe').style.display = 'none'; // Hide the iframe
+        showIframeButton.style.display = 'block'; // Show the show iframe button
+    });
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <style>
+        body {
+            background-color: #2d2d2d;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+
+        .game-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-button {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .game-button:hover {
+            transform: scale(1.1);
+        }
+
+        .game-button img {
+            width: 200px;
+            height: auto;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Game Menu!</h1>
+    <div class="game-buttons">
+        <a href="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r" class="game-button">
+            <img src="game1_image.jpg" alt="Game 1">
+        </a>
+        <a href="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" class="game-button">
+            <img src="game2_image.jpg" alt="Game 2">
+        </a>
+    </div>
 </body>
 </html>
