@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <style>
+        body {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+
+        .game-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 20px; /* Add some padding to prevent overflow */
+            padding-left: 150px;
+            padding-right: 150px;
+            margin-top: 200px;
+        }
+
+        .game-buttons {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .game-buttons:hover {
+            transform: scale(1.1);
+        }
+
+        .game-buttons img {
+            width: 140px;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .iframe-container {
+            z-index: 999;
+        }
+
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+        }
+
+        .back-button img {
+            width: 50px;
+            height: auto;
+            position: fixed;
+            top: 250px;
+            left: 0px;
+            z-index: 1000;
+        }
+
+        /* Add styles for the video background */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire viewport */
+            z-index: -1; /* Ensure the video is behind other elements */
+        }
+
+        /* Hide the video controls */
+        #background-video::-webkit-media-controls {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game_menu_bg_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div>
+        <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r" sandbox="allow-same-origin allow-scripts"></iframe>
+        <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" sandbox="allow-same-origin allow-scripts"></iframe>
+        <iframe id="game3Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" sandbox="allow-same-origin allow-scripts"></iframe>
+        <iframe id="game4Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" sandbox="allow-same-origin allow-scripts"></iframe>
+        <iframe id="game5Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S" sandbox="allow-same-origin allow-scripts"></iframe>
+        <iframe id="game6Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/HJP4afkvqJQ" sandbox="allow-same-origin allow-scripts"></iframe>
+        <a id="backButton" class="back-button">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/backButton.png" alt="Go Back">
+        </a>
+    </div>
+    <div class="game-buttons-container">
+        <div id="game-button-1" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
+        </div>
+        <div id="game-button-2" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
+        </div>
+        <div id="game-button-3" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game3_image.jpg" alt="Game 3">
+        </div>
+        <div id="game-button-4" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game4_image.jpg" alt="Game 4">
+        </div>
+        <div id="game-button-5" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game5_image.jpg" alt="Game 5">
+        </div>
+        <div id="game-button-6" class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game6_image.jpg" alt="Game 6">
+        </div>
+    </div>
+
+    <script>
+        const gameButton1 = document.getElementById('game-button-1');
+        const gameButton2 = document.getElementById('game-button-2');
+        const gameButton3 = document.getElementById('game-button-3');
+        const gameButton4 = document.getElementById('game-button-4');
+        const gameButton5 = document.getElementById('game-button-5');
+        const gameButton6 = document.getElementById('game-button-6');
+        
+        const game1Iframe = document.getElementById('game1Iframe');
+        const game2Iframe = document.getElementById('game2Iframe');
+        const game3Iframe = document.getElementById('game3Iframe');
+        const game4Iframe = document.getElementById('game4Iframe');
+        const game5Iframe = document.getElementById('game5Iframe');
+        const game6Iframe = document.getElementById('game6Iframe');
+
+        const backButton = document.getElementById('backButton');
+
+        game1Iframe.style.display = 'none';
+        game2Iframe.style.display = 'none';
+        game3Iframe.style.display = 'none';
+        game4Iframe.style.display = 'none';
+        game5Iframe.style.display = 'none';
+        game6Iframe.style.display = 'none';
+        backButton.style.display = 'none';
+
+        gameButton1.addEventListener('click', () => {
+            console.log('abc')
+            game1Iframe.src += '';
+            game1Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        gameButton2.addEventListener('click', () => {
+            game2Iframe.src += '';
+            game2Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        gameButton3.addEventListener('click', () => {
+            game3Iframe.src += '';
+            game3Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        gameButton4.addEventListener('click', () => {
+            game4Iframe.src += '';
+            game4Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        gameButton5.addEventListener('click', () => {
+            game5Iframe.src += '';
+            game5Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+        gameButton6.addEventListener('click', () => {
+            game6Iframe.src += '';
+            game6Iframe.style.display = 'block';
+            backButton.style.display = 'block';
+        });
+
+        backButton.addEventListener('click', () => {
+            game1Iframe.style.display = 'none';
+            game2Iframe.style.display = 'none';
+            game3Iframe.style.display = 'none';
+            game4Iframe.style.display = 'none';
+            game5Iframe.style.display = 'none';
+            game6Iframe.style.display = 'none';
+            backButton.style.display = 'none';
+        });
+
+        // checkIdleUI(game1Iframe);
+
+        function checkIdleUI(game1Iframe) {
+            let timer, currSeconds = 0;
+
+            function resetTimer() { 
+                clearInterval(timer); 
+                currSeconds = 0; 
+                timer = setInterval(startIdleTimer, 1000); 
+            }
+
+            window.onload = resetTimer; 
+            window.onmousemove = resetTimer; 
+            window.onmousedown = resetTimer; 
+            window.ontouchstart = resetTimer; 
+            window.onclick = resetTimer; 
+            window.onkeypress = resetTimer;
+
+            window.addEventListener('click', resetTimer);
+
+            function startIdleTimer() { 
+                currSeconds++;
+                console.log("abc:", currSeconds);
+                if (currSeconds > 19) {
+                    window.location.reload();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
