@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <style>
+        body {
+            background-image: url('https://raw.githubusercontent.com/ishaandhamija/game-test/main/game_menu_bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 45%;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+
+        .game-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 20px; /* Add some padding to prevent overflow */
+            padding-left: 150px;
+            padding-right: 150px;
+            margin-top: 200px;
+        }
+
+        .game-buttons {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .game-buttons:hover {
+            transform: scale(1.1);
+        }
+
+        .game-buttons img {
+            width: 140px;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .iframe-container {
+            z-index: 999;
+        }
+
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+        }
+
+        .back-button img {
+            width: 20px;
+            height: auto;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <iframe id="game1Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"></iframe>
+        <iframe id="game2Iframe" class="iframe-container" seamless="seamless" allowtransparency="true" allowfullscreen="true" frameborder="0" src="https://zv1y2i8p.play.gamezop.com/g/H1CWk36mq0S"></iframe>
+        <a id="backButton" class="back-button">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/backButton.png" alt="Go Back">
+        </a>
+    </div>
+    <div class="game-buttons-container">
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
+        </div>
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
+        </div>
+        <!-- Repeat the above divs for additional games -->
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
+        </div>
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
+        </div>
+        <!-- Repeat the above divs for additional games -->
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
+        </div>
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
+        </div>
+        <!-- Repeat the above divs for additional games -->
+        <!-- <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game1_image.jpg" alt="Game 1">
+        </div>
+        <div class="game-buttons">
+            <img src="https://raw.githubusercontent.com/ishaandhamija/game-test/main/game2_image.jpg" alt="Game 2">
+        </div> -->
+        <!-- Repeat the above divs for additional games -->
+    </div>
+
+    <script>
+        const gameButtons = document.querySelectorAll('.game-buttons');
+        const game1Iframe = document.getElementById('game1Iframe');
+        const game2Iframe = document.getElementById('game2Iframe');
+        const backButton = document.getElementById('backButton');
+
+        game1Iframe.style.display = 'none';
+        game2Iframe.style.display = 'none';
+        backButton.style.display = 'none';
+
+        gameButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const iframeSrc = button.dataset.iframeSrc;
+                if (iframeSrc) {
+                    game1Iframe.src = iframeSrc;
+                    game1Iframe.style.display = 'block';
+                    backButton.style.display = 'block';
+                }
+            });
+        });
+
+        backButton.addEventListener('click', () => {
+            game1Iframe.style.display = 'none';
+            game2Iframe.style.display = 'none';
+            backButton.style.display = 'none';
+        });
+
+        // checkIdleUI(game1Iframe);
+
+        function checkIdleUI(game1Iframe) {
+            let timer, currSeconds = 0;
+
+            function resetTimer() { 
+                clearInterval(timer); 
+                currSeconds = 0; 
+                timer = setInterval(startIdleTimer, 1000); 
+            }
+
+            window.onload = resetTimer; 
+            window.onmousemove = resetTimer; 
+            window.onmousedown = resetTimer; 
+            window.ontouchstart = resetTimer; 
+            window.onclick = resetTimer; 
+            window.onkeypress = resetTimer;
+
+            window.addEventListener('click', resetTimer);
+
+            function startIdleTimer() { 
+                currSeconds++;
+                console.log("abc:", currSeconds);
+                if (currSeconds > 19) {
+                    window.location.reload();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
